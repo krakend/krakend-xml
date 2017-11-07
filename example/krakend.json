@@ -1,0 +1,22 @@
+{
+    "version": 1,
+    "name": "Search gateway",
+    "port": 8080,
+    "cache_ttl": 3600,
+    "timeout": "15s",
+    "disable_rest": true,
+    "endpoints": [
+        {
+            "endpoint": "/search/{key}",
+            "backend": [
+                {
+                    "host": [
+                        "https://www.biocatalogue.org"
+                    ],
+                    "url_pattern": "/search.xml?q={key}",
+                    "encoding": "xml"
+                }
+            ]
+        }
+    ]
+}
