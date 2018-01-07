@@ -10,10 +10,10 @@ BIN_NAME=krakend_xml_example_${KRAKEND_VERSION}
 all: deps build
 
 deps:
-	go get "github.com/devopsfaith/krakend/config/viper"
+	go get "github.com/devopsfaith/krakend/config"
 	go get "github.com/devopsfaith/krakend/proxy"
 	go get "github.com/devopsfaith/krakend/router/gin"
-	go get "github.com/devopsfaith/krakend/logging/gologging"
+	go get "github.com/devopsfaith/krakend/logging"
 
 build:
 	go build -ldflags="-X github.com/devopsfaith/krakend/core.KrakendVersion=${KRAKEND_VERSION}" -o ${BIN_NAME}
