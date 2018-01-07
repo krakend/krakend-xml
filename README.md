@@ -3,6 +3,12 @@ Krakend XML
 
 Enable XML encoding in the [KrakenD](github.com/devopsfaith/krakend) framework
 
+**Notice: this package requires KrakenD >= 0.4**
+
+## Documentation
+
+For more details, check the auto-generated documentation: https://godoc.org/github.com/devopsfaith/krakend-xml
+
 ## Using it
 
 Just register the module before parsing your config and everything will work smoothly
