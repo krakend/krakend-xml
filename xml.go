@@ -16,7 +16,7 @@ func Register() error {
 const Name = "xml"
 
 // NewDecoder return the right XML decoder
-func NewDecoder(isCollection bool) encoding.Decoder {
+func NewDecoder(isCollection bool) func(io.Reader, *map[string]interface{}) error {
 	if isCollection {
 		return CollectionDecoder
 	}
