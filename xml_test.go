@@ -23,8 +23,7 @@ func TestNewDecoder_map(t *testing.T) {
 					<Value>Friends</Value>
 					<Value>Squash</Value>
 				</Group>
-			</Person>
-		`)
+			</Person>`)
 	var result map[string]interface{}
 	if err := decoder(original, &result); err != nil {
 		t.Error("Unexpected error:", err.Error())
@@ -59,8 +58,7 @@ func TestNewDecoder_collection(t *testing.T) {
 				<FullName>Charles</FullName>
 				<Company>Acme</Company>
 			</Person>
-		</People>
-			`)
+		</People>`)
 	var result map[string]interface{}
 	if err := decoder(original, &result); err != nil {
 		t.Error("Unexpected error:", err.Error())

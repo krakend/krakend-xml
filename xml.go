@@ -25,7 +25,7 @@ func NewDecoder(isCollection bool) func(io.Reader, *map[string]interface{}) erro
 
 // Decoder implements the Decoder interface
 func Decoder(r io.Reader, v *map[string]interface{}) error {
-	mv, err := mxj.NewMapXmlReader(r)
+	mv, err := mxj.NewMapXmlReader(xmlReader{r: r})
 	if err != nil {
 		return err
 	}
@@ -36,10 +36,29 @@ func Decoder(r io.Reader, v *map[string]interface{}) error {
 
 // CollectionDecoder implements the Decoder interface over a collection
 func CollectionDecoder(r io.Reader, v *map[string]interface{}) error {
-	mv, err := mxj.NewMapXmlReader(r)
+	mv, err := mxj.NewMapXmlReader(xmlReader{r: r})
 	if err != nil {
 		return err
 	}
 	*(v) = map[string]interface{}{"collection": mv}
 	return nil
+}
+
+type xmlReader struct {
+	r io.Reader
+}
+
+func (x xmlReader) Read(p []byte) (n int, err error) {
+	n, err = x.r.Read(p)
+
+	if err != io.EOF {
+		return n, err
+	}
+
+	if len(p) == n {
+		return n, nil
+	}
+
+	p[n] = ([]byte("\n"))[0]
+	return n + 1, err
 }
