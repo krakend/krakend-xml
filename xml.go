@@ -3,6 +3,7 @@ package xml
 import (
 	"io"
 
+	"golang.org/x/net/html/charset"
 	"github.com/clbanning/mxj"
 	"github.com/devopsfaith/krakend/encoding"
 )
@@ -25,6 +26,7 @@ func NewDecoder(isCollection bool) func(io.Reader, *map[string]interface{}) erro
 
 // Decoder implements the Decoder interface
 func Decoder(r io.Reader, v *map[string]interface{}) error {
+	mxj.XmlCharsetReader = charset.NewReaderLabel
 	mv, err := mxj.NewMapXmlReader(xmlReader{r: r})
 	if err != nil {
 		return err
@@ -36,6 +38,7 @@ func Decoder(r io.Reader, v *map[string]interface{}) error {
 
 // CollectionDecoder implements the Decoder interface over a collection
 func CollectionDecoder(r io.Reader, v *map[string]interface{}) error {
+	mxj.XmlCharsetReader = charset.NewReaderLabel
 	mv, err := mxj.NewMapXmlReader(xmlReader{r: r})
 	if err != nil {
 		return err
