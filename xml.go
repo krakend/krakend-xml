@@ -3,9 +3,9 @@ package xml
 import (
 	"io"
 
-	"golang.org/x/net/html/charset"
 	"github.com/clbanning/mxj"
-	"github.com/devopsfaith/krakend/encoding"
+	"github.com/luraproject/lura/encoding"
+	"golang.org/x/net/html/charset"
 )
 
 // Register registers the xml decoder
