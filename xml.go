@@ -4,13 +4,13 @@ import (
 	"io"
 
 	"github.com/clbanning/mxj"
-	"github.com/luraproject/lura/encoding"
+	"github.com/luraproject/lura/v2/encoding"
 	"golang.org/x/net/html/charset"
 )
 
 // Register registers the xml decoder
 func Register() error {
-	return encoding.Register(Name, NewDecoder)
+	return encoding.GetRegister().Register(Name, NewDecoder)
 }
 
 // Name is the key for the xml encoding
