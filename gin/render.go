@@ -3,7 +3,7 @@ package gin
 import (
 	"github.com/clbanning/mxj"
 	"github.com/gin-gonic/gin"
-	"github.com/luraproject/lura/proxy"
+	"github.com/luraproject/lura/v2/proxy"
 )
 
 // Render marshals the proxy response and passes the resulting xml to the response writer

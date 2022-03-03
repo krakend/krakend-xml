@@ -1,9 +1,7 @@
 Krakend XML
 ====
 
-Enable XML encoding in the [KrakenD](github.com/devopsfaith/krakend) framework
-
-**Notice: this package requires KrakenD >= 0.4**
+Enable XML encoding in the [Lura Project](github.com/luraproject/lura)
 
 ## Documentation
 
