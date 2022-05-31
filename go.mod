@@ -1,4 +1,4 @@
-module github.com/devopsfaith/krakend-xml/v2
+module github.com/krakendio/krakend-xml/v2
 
 go 1.17
 
