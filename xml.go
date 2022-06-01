@@ -33,7 +33,6 @@ func Decoder(r io.Reader, v *map[string]interface{}) error {
 	}
 	*v = mv
 	return nil
-
 }
 
 // CollectionDecoder implements the Decoder interface over a collection
