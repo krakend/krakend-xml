@@ -6,6 +6,10 @@ import (
 	"github.com/luraproject/lura/v2/proxy"
 )
 
+func init() {
+	mxj.XMLEscapeChars(true)
+}
+
 // Render marshals the proxy response and passes the resulting xml to the response writer
 func Render(c *gin.Context, response *proxy.Response) {
 	status := c.Writer.Status()

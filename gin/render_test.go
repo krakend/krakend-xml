@@ -18,7 +18,7 @@ func TestRender(t *testing.T) {
 			IsComplete: true,
 			Data: map[string]interface{}{
 				"a": map[string]interface{}{
-					"content": "supu",
+					"content": "supu & tupu",
 				},
 				"content": "tupu",
 				"foo":     42,
@@ -27,7 +27,7 @@ func TestRender(t *testing.T) {
 		Render(c, res)
 	})
 
-	expected := `<doc><a><content>supu</content></a><content>tupu</content><foo>42</foo></doc>`
+	expected := `<doc><a><content>supu &amp; tupu</content></a><content>tupu</content><foo>42</foo></doc>`
 
 	req, _ := http.NewRequest("GET", "http://127.0.0.1:8080/", nil)
 
