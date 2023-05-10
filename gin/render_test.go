@@ -1,7 +1,7 @@
 package gin
 
 import (
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -18,7 +18,7 @@ func TestRender(t *testing.T) {
 			IsComplete: true,
 			Data: map[string]interface{}{
 				"a": map[string]interface{}{
-					"content": "supu",
+					"content": "supu & tupu",
 				},
 				"content": "tupu",
 				"foo":     42,
@@ -27,16 +27,16 @@ func TestRender(t *testing.T) {
 		Render(c, res)
 	})
 
-	expected := `<doc><a><content>supu</content></a><content>tupu</content><foo>42</foo></doc>`
+	expected := `<doc><a><content>supu &amp; tupu</content></a><content>tupu</content><foo>42</foo></doc>`
 
-	req, _ := http.NewRequest("GET", "http://127.0.0.1:8080/", nil)
+	req, _ := http.NewRequest("GET", "http://127.0.0.1:8080/", http.NoBody)
 
 	w := httptest.NewRecorder()
 	server.ServeHTTP(w, req)
 
 	defer w.Result().Body.Close()
 
-	body, ioerr := ioutil.ReadAll(w.Result().Body)
+	body, ioerr := io.ReadAll(w.Result().Body)
 	if ioerr != nil {
 		t.Error("reading response body:", ioerr)
 		return
