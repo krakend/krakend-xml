@@ -29,7 +29,8 @@ func TestRender(t *testing.T) {
 
 	expected := `<doc><a><content>supu &amp; tupu</content></a><content>tupu</content><foo>42</foo></doc>`
 
-	req, _ := http.NewRequest("GET", "http://127.0.0.1:8080/", http.NoBody)
+	// we skip the check for https requests in tests adding the comment:
+	req, _ := http.NewRequest("GET", "http://127.0.0.1:8080/", http.NoBody) // skipcq: GO-S1028
 
 	w := httptest.NewRecorder()
 	server.ServeHTTP(w, req)
