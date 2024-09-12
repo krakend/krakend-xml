@@ -4,8 +4,8 @@ go 1.19
 
 require (
 	github.com/clbanning/mxj v1.8.4
-	github.com/gin-gonic/gin v1.10.0
-	github.com/luraproject/lura/v2 v2.0.5
+	github.com/gin-gonic/gin v1.9.1
+	github.com/luraproject/lura/v2 v2.7.0
 	golang.org/x/net v0.28.0
 )
 
