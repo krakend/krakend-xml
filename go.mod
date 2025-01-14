@@ -6,7 +6,7 @@ require (
 	github.com/clbanning/mxj v1.8.4
 	github.com/gin-gonic/gin v1.9.1
 	github.com/luraproject/lura/v2 v2.7.0
-	golang.org/x/net v0.28.0
+	golang.org/x/net v0.33.0
 )
 
 require (
