@@ -1,6 +1,8 @@
 module github.com/krakendio/krakend-xml/v2
 
-go 1.19
+go 1.23.0
+
+toolchain go1.23.6
 
 require (
 	github.com/clbanning/mxj v1.8.4
