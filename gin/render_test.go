@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/gin-gonic/gin"
-	"github.com/luraproject/lura/v2/proxy"
+	"github.com/luraproject/lura/v3/proxy"
 )
 
 func TestRender(t *testing.T) {

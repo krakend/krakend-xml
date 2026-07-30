@@ -3,7 +3,7 @@ package gin
 import (
 	"github.com/clbanning/mxj/v2"
 	"github.com/gin-gonic/gin"
-	"github.com/luraproject/lura/v2/proxy"
+	"github.com/luraproject/lura/v3/proxy"
 )
 
 func init() {
