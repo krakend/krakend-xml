@@ -5,12 +5,12 @@ import (
 	"log"
 	"os"
 
-	"github.com/luraproject/lura/v2/config"
-	"github.com/luraproject/lura/v2/logging"
-	"github.com/luraproject/lura/v2/proxy"
-	"github.com/luraproject/lura/v2/router/gin"
+	"github.com/luraproject/lura/v3/config"
+	"github.com/luraproject/lura/v3/logging"
+	"github.com/luraproject/lura/v3/proxy"
+	"github.com/luraproject/lura/v3/router/gin"
 
-	xml "github.com/krakend/krakend-xml/v2"
+	xml "github.com/krakend/krakend-xml/v3"
 )
 
 func main() {

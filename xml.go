@@ -4,7 +4,7 @@ import (
 	"io"
 
 	"github.com/clbanning/mxj/v2"
-	"github.com/luraproject/lura/v2/encoding"
+	"github.com/luraproject/lura/v3/encoding"
 	"golang.org/x/net/html/charset"
 )
 
@@ -42,7 +42,7 @@ func CollectionDecoder(r io.Reader, v *map[string]interface{}) error {
 	if err != nil {
 		return err
 	}
-	*(v) = map[string]interface{}{"collection": mv}
+	*v = map[string]interface{}{"collection": mv}
 	return nil
 }
 
@@ -61,6 +61,6 @@ func (x xmlReader) Read(p []byte) (n int, err error) {
 		return n, nil
 	}
 
-	p[n] = ([]byte("\n"))[0]
+	p[n] = []byte("\n")[0]
 	return n + 1, err
 }
